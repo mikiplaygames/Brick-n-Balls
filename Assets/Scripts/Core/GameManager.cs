@@ -34,4 +34,8 @@ public class GameManager : MonoBehaviour {
         GameInProgress = false;
         OnGameOver.Invoke();
     }
+    public void Restart()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 }
