@@ -6,4 +6,8 @@ public class UiPointsDisplay : NumberDisplay
         base.Awake();
         BrickCollisionSystem.OnBrickHit.AddListener(UpdateDisplay);
     }
+    void OnDestroy()
+    {
+        BrickCollisionSystem.OnBrickHit.RemoveListener(UpdateDisplay);
+    }
 }

@@ -6,4 +6,8 @@ public class UiBallsLeftDisplay : NumberDisplay {
         PlayerShootingSystem.OnShoot.AddListener(UpdateDisplay);
         GameManager.OnGameStart.AddListener(UpdateDisplay);
     }
+    private void OnDestroy(){
+        PlayerShootingSystem.OnShoot.RemoveListener(UpdateDisplay);
+        GameManager.OnGameStart.RemoveListener(UpdateDisplay);
+    }
 }

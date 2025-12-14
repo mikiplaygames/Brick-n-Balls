@@ -6,6 +6,14 @@ public class EnableOnGameStart : MonoBehaviour
 {
     void Awake()
     {
-        GameManager.OnGameStart.AddListener(() => gameObject.SetActive(true));
+        GameManager.OnGameStart.AddListener(Show);
+    }
+    void Show()
+    {
+        gameObject.SetActive(true);
+    }
+    void OnDestroy()
+    {
+        GameManager.OnGameStart.RemoveListener(Show);
     }
 }
