@@ -1,0 +1,29 @@
+using UnityEngine;
+using UnityEngine.Events;
+
+public class GameManager : MonoBehaviour {
+    public static UnityEvent OnGameStart = new();
+    public static UnityEvent<int> OnGameOver = new();
+    public static int Score = 0;
+    public static int BallsLeft = 0;
+    const int InitialBalls = 50;
+    public static bool GameInProgress { get; private set; }
+    public void StartGame()
+    {
+        Score = 0;
+        BallsLeft = InitialBalls;
+        GameInProgress = true;
+        OnGameStart.Invoke();
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    public static void EndGame()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        GameInProgress = false;
+        OnGameOver.Invoke(Score);
+    }
+}
