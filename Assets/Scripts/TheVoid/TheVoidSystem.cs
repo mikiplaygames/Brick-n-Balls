@@ -32,7 +32,7 @@ public partial struct TheVoidSystem : ISystem
                 ecb.DestroyEntity(entityB);
             else
                 continue;
-            if (GameManager.BallsLeft <= 0)
+            if (GameManager.BallsLeft <= 0 && SystemAPI.QueryBuilder().WithAll<Ball>().Build().CalculateEntityCount() <= 1)
                 GameManager.EndGame();
         }
         ecb.Playback(state.EntityManager);

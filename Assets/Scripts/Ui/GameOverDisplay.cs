@@ -1,6 +1,6 @@
 public class GameOverDisplay : NumberDisplay
 {
-    protected override string BaseText => "Game Over \nFinal Score: ";
+    protected override string BaseText => "Final Score";
     protected override int GetNumber() => GameManager.Score;
     protected override void Awake()
     {
