@@ -12,19 +12,18 @@ public partial struct BrickSpawnSystem : ISystem
         SpawnBrickConfig spawnBrickConfig = SystemAPI.GetSingleton<SpawnBrickConfig>();
         EntityCommandBuffer ecb = new(state.WorldUpdateAllocator);
 
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < spawnBrickConfig.SpawnCount; i++)
         {
             Entity brickEntity = ecb.Instantiate(spawnBrickConfig.BrickPrefab);
 
             LocalTransform spawnTransform = new()
             {
-                Position = new float3(UnityEngine.Random.Range(-spawnBrickConfig.SpawnBound, spawnBrickConfig.SpawnBound), 1, UnityEngine.Random.Range(-spawnBrickConfig.SpawnBound, spawnBrickConfig.SpawnBound)), 
+                Position = new float3(UnityEngine.Random.Range(-spawnBrickConfig.SpawnBound, spawnBrickConfig.SpawnBound), UnityEngine.Random.Range(-spawnBrickConfig.SpawnBound, spawnBrickConfig.SpawnBound), 0), 
                 Rotation = quaternion.identity,
                 Scale = 1f
             };
 
             ecb.SetComponent(brickEntity, spawnTransform);
-            // ecb.SetComponent(brickEntity, new Brick { Hitpoints = UnityEngine.Random.Range(1, spawnBrickConfig.BrickHitpoints + 1) });
         }
 
         ecb.Playback(state.EntityManager);

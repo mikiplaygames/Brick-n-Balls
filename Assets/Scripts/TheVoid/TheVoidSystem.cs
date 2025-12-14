@@ -24,6 +24,10 @@ public partial struct TheVoidSystem : ISystem
                 ecb.DestroyEntity(entityA);
             else if (SystemAPI.HasComponent<Ball>(entityB) && SystemAPI.HasComponent<TheVoid>(entityA))
                 ecb.DestroyEntity(entityB);
+            else
+                continue;
+            if (GameManager.BallsLeft <= 0)
+                GameManager.EndGame();
         }
         ecb.Playback(state.EntityManager);
         ecb.Dispose();

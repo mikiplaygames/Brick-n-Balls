@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour {
     public static UnityEvent OnGameStart = new();
-    public static UnityEvent<int> OnGameOver = new();
+    public static UnityEvent OnGameOver = new();
     public static int Score = 0;
     public static int BallsLeft = 0;
     const int InitialBalls = 50;
@@ -24,6 +24,6 @@ public class GameManager : MonoBehaviour {
         Cursor.visible = true;
 
         GameInProgress = false;
-        OnGameOver.Invoke(Score);
+        OnGameOver.Invoke();
     }
 }

@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class PlayerCameraControl : MonoBehaviour {
-    [SerializeField] private Transform direction;
     private Vector2 mouse;
     private const float Multiplier = 0.1f;
     public static Vector3 Position;
@@ -10,6 +9,8 @@ public class PlayerCameraControl : MonoBehaviour {
     private float yRotation;
     private void Update()
     {
+        if (!GameManager.GameInProgress)
+            return;
         mouse = InputWrapper.control.Player.Look.ReadValue<Vector2>();
 
         yRotation += mouse.x * Multiplier;
@@ -17,8 +18,7 @@ public class PlayerCameraControl : MonoBehaviour {
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        direction.localRotation = Quaternion.Euler(0, yRotation, 0);
+        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0);
 
         Position = transform.position;
         Forward = transform.forward;

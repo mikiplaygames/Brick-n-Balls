@@ -17,8 +17,6 @@ public partial struct BrickCollisionSystem : ISystem
         {
             Entity brickEntity;
 
-            UnityEngine.Debug.Log($"Collision detected between {collisionEvent.EntityA} and {collisionEvent.EntityB}");
-
             if (SystemAPI.HasComponent<Brick>(collisionEvent.EntityA) && SystemAPI.HasComponent<Ball>(collisionEvent.EntityB))
                 brickEntity = collisionEvent.EntityA;
             else if (SystemAPI.HasComponent<Brick>(collisionEvent.EntityB) && SystemAPI.HasComponent<Ball>(collisionEvent.EntityA))
