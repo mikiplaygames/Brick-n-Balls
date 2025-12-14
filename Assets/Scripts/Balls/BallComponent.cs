@@ -1,4 +1,7 @@
 using Unity.Entities;
+/// <summary>
+/// Simple ball component and its baker
+/// </summary>
 public class BallComponentAuthoring : UnityEngine.MonoBehaviour
 {
     private class Baker : Baker<BallComponentAuthoring>

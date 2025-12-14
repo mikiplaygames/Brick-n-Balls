@@ -1,6 +1,8 @@
 using Unity.Entities;
 using UnityEngine;
-
+/// <summary>
+/// Authoring component for spawning bricks in the ECS system, holds configuration data
+/// </summary>
 public class BrickSpawnerAuthoring : MonoBehaviour {
     public GameObject BrickPrefab;
     public int SpawnCount = 12;

@@ -3,7 +3,9 @@ using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Transforms;
 using UnityEngine.Events;
-
+/// <summary>
+/// Handles player shooting mechanics, spawning balls with an initial velocity when the shoot input and rest of its conditions is met.
+/// </summary>
 public partial struct PlayerShootingSystem : ISystem
 {
     const float ShootForce = 25f;

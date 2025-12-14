@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Handles player movement based on input and camera direction.
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Transform direction;

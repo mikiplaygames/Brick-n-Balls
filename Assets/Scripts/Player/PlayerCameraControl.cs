@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Controls the player's camera rotation based on mouse movement.
+/// </summary>
 public class PlayerCameraControl : MonoBehaviour {
     private Vector2 mouse;
     private const float Multiplier = 0.1f;

@@ -1,6 +1,9 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+/// <summary>
+/// System responsible for spawning bricks at the start of the game
+/// </summary>
 public partial struct BrickSpawnSystem : ISystem
 {
     public void OnCreate(ref SystemState state)

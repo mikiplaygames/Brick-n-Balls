@@ -1,6 +1,8 @@
 using Unity.Entities;
 using UnityEngine;
-
+/// <summary>
+/// Simple ball spawner authoring component, holds reference to ball prefab
+/// </summary>
 public class BallSpawnerAuthoring : MonoBehaviour {
     public GameObject BallPrefab;
     private class Baker : Baker<BallSpawnerAuthoring> {

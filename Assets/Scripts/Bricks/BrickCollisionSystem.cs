@@ -5,6 +5,10 @@ using UnityEngine.Events;
 public partial struct BrickCollisionSystem : ISystem
 {
     public static UnityEvent OnBrickHit = new();
+    /// <summary>
+    /// Check for collision events between Bricks and Balls. If one occurs, reduce Brick hitpoints or destroy them if hitpoints reach zero.
+    /// </summary>
+    /// <param name="state"></param>
     public void OnUpdate(ref SystemState state)
     {
         var sim = SystemAPI.GetSingleton<SimulationSingleton>().AsSimulation();
