@@ -36,6 +36,5 @@ public partial struct TheVoidSystem : ISystem
                 GameManager.EndGame();
         }
         ecb.Playback(state.EntityManager);
-        ecb.Dispose();
     }
 }

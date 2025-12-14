@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public void StartGame()
     {
+        if (GameInProgress)
+            return;
         Score = 0;
         BallsLeft = InitialBalls;
         GameInProgress = true;
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public static void EndGame()
     {
+        if (!GameInProgress)
+            return;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

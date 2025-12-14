@@ -28,7 +28,6 @@ public partial struct BrickCollisionSystem : ISystem
             else
                 continue;
 
-            // reduce brick hitpoints
             GameManager.Score++;
             OnBrickHit.Invoke();
 

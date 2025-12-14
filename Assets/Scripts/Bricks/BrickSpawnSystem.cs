@@ -30,7 +30,6 @@ public partial struct BrickSpawnSystem : ISystem
         }
 
         ecb.Playback(state.EntityManager);
-        ecb.Dispose();
 
         state.Enabled = false;
     }

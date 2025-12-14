@@ -38,7 +38,6 @@ public partial struct PlayerShootingSystem : ISystem
         ecb.SetComponent(ballEntity, new Ball { });
 
         ecb.Playback(state.EntityManager);
-        ecb.Dispose();
 
         GameManager.BallsLeft--;
         OnShoot.Invoke();
