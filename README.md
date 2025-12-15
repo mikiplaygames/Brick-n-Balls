@@ -1,4 +1,4 @@
-# Hello, this is simple project showcasing my first time meeting ~*Unity DOTS*~
+# Hello, this is simple project showcasing my first time meeting THE \~*Unity DOTS*\~
 
 ## So, the adventure was filled with uncertainty about where to go adn how to get there but eventually I managed to arrive in *some* form.
 
