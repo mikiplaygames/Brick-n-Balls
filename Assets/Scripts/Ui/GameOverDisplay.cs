@@ -6,16 +6,16 @@ public class GameOverDisplay : NumberDisplay
     {
         base.Awake();
         GameManager.OnGameOver.AddListener(UpdateDisplay);
-        GameManager.OnGameOver.AddListener(Hide);
+        GameManager.OnGameOver.AddListener(Show);
         gameObject.SetActive(false);
     }
-    void Hide()
+    void Show()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
     void OnDestroy()
     {
         GameManager.OnGameOver.RemoveListener(UpdateDisplay);
-        GameManager.OnGameOver.RemoveListener(Hide);
+        GameManager.OnGameOver.RemoveListener(Show);
     }
 }

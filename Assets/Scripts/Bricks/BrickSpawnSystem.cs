@@ -12,9 +12,15 @@ public partial struct BrickSpawnSystem : ISystem
     }
     public void OnUpdate(ref SystemState state)
     {
+        if (!GameManager.ShouldSpawnBalls)
+            return;
+
+        GameManager.ShouldSpawnBalls = false;
+
         SpawnBrickConfig spawnBrickConfig = SystemAPI.GetSingleton<SpawnBrickConfig>();
         EntityCommandBuffer ecb = new(state.WorldUpdateAllocator);
 
+        // Spawn new bricks
         for (int i = 0; i < spawnBrickConfig.SpawnCount; i++)
         {
             Entity brickEntity = ecb.Instantiate(spawnBrickConfig.BrickPrefab);
@@ -30,7 +36,5 @@ public partial struct BrickSpawnSystem : ISystem
         }
 
         ecb.Playback(state.EntityManager);
-
-        state.Enabled = false;
     }
 }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public static UnityEvent OnGameOver = new();
     public static int Score = 0;
     public static int BallsLeft = 0;
+    public static bool ShouldSpawnBalls = false;
     const int InitialBalls = 50;
     public static bool GameInProgress { get; private set; }
     /// <summary>
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour {
         Score = 0;
         BallsLeft = InitialBalls;
         GameInProgress = true;
+        ShouldSpawnBalls = true;
         OnGameStart.Invoke();
         
         Cursor.lockState = CursorLockMode.Locked;

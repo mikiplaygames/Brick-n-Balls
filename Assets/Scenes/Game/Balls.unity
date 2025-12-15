@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BrickPrefab: {fileID: 581674598274526762, guid: 06d63b67af88b6d40ba9d21c80cf55a4, type: 3}
   SpawnCount: 70
-  SpawnBound: 20
+  SpawnBound: 25
 --- !u!4 &601869030
 Transform:
   m_ObjectHideFlags: 0
